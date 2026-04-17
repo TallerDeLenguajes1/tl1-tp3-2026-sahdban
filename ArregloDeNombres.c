@@ -19,6 +19,23 @@ int main(){
         strcpy(V[i], buffer);
     }
 
+    printf("Ingrese la accion que desea realizar: \n1_Busqueda por ID\n2_Busqueda por palabra\n");
+    int opcion = 0;
+    scanf("%d", &opcion);
+    if (opcion == 1){
+        printf("ingrese la ID: ");
+        int id;
+        scanf("%d", &id);
+        int busqueda = BuscarNombreID(V, id);
+    } 
+    if (opcion == 2) {
+        printf("ingrese la clave: ");
+        char clave[20];
+        scanf("%s", clave);
+        int busqueda = BuscarNombreClave(V, clave);
+        if (busqueda != -1) printf("%s", V[busqueda]);
+    }
+
 }
 
 void MostrarPersonas(char *personas[]){
