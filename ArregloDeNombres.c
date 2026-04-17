@@ -30,7 +30,7 @@ void MostrarPersonas(char *personas[]){
     
 }
 
-int BuscarNombreID(char *personas[], char palabra[]){
+int BuscarNombreClave(char *personas[], char palabra[]){
     for (int i = 0; i < 5; i++)
     {
         if (strstr(personas[i], palabra) != NULL)
@@ -41,11 +41,12 @@ int BuscarNombreID(char *personas[], char palabra[]){
     return -1;
 }
 
-int BuscarNombreClave(char *personas[], int id){
+int BuscarNombreID(char *personas[], int id) {
     if (id < 0 || id > 4)
     {
         printf("no se encontro el valor buscado\n");
     } else {
         printf("%s\n", personas[id]);
     }
+    return 1;
 }
