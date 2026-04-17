@@ -3,6 +3,7 @@
 #include <string.h>
 
 void MostrarPersonas(char *personas[]);
+int BuscarNombre(char *personas[], char palabra[]);
 
 int main(){
 
@@ -16,7 +17,8 @@ int main(){
         V[i] = malloc(sizeof(char)*tam);
         strcpy(V[i], buffer);
     }
-    MostrarPersonas(V);
+    //MostrarPersonas(V);
+
 
 }
 
@@ -27,4 +29,15 @@ void MostrarPersonas(char *personas[]){
         printf("%s\n", personas[i]);
     }
     
+}
+
+int BuscarNombre(char *personas[], char palabra[]){
+    for (int i = 0; i < 5; i++)
+    {
+        if (strstr(personas[i], palabra) != NULL)
+        {
+            return i;
+        }
+    }
+    return -1;
 }
